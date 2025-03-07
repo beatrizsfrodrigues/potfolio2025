@@ -1,0 +1,77 @@
+/* Custom Dark Mode Styling */
+[data-theme="dark"] {
+  --color-background: #44444c;
+  /* --color-foreground: #1a1a1a;
+    --color-border: #272727;  */
+  /* --color-text: #ddaf16; */
+  color: #f7f4ea;
+}
+
+.mWidth {
+  padding: 0px 64px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homeMainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-top: 15%;
+  height: 70vh;
+}
+
+.homeDiv {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.mainBody {
+  font-size: 16px;
+  font-family: Quicksand, sans-serif;
+  font-weight: 400;
+}
+
+.pageTitle {
+  margin-bottom: 56px;
+  line-height: 1;
+}
+
+.line {
+  border-top: 2px solid #f7f4ea;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  height: 0px;
+}
+
+.meDescription {
+  max-width: 900px;
+}
+
+#projectsContainer {
+  display: flex;
+  flex-wrap: row;
+  justify-content: center;
+  gap: 32px;
+}
+
+.projectCard {
+  height: 500px;
+  width: 350px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.projectCard:hover {
+  background-color: #d6d7fa;
+  color: #44444c;
+  transition: 0.3s;
+}
+
+.projectCardImg {
+  position: absolute;
+  right: -70px;
+  bottom: -50px;
+}
