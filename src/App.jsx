@@ -27,7 +27,7 @@ function App() {
           <Link to="/projects" className="navLink">
             Projects
           </Link>
-          <Button radius="full" variant="solid" size="4">
+          <Button radius="full" variant="solid" size="4" id="cvBtn">
             Get my CV!
           </Button>
         </div>

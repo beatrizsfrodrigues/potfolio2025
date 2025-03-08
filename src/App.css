@@ -1,3 +1,6 @@
+@import "@radix-ui/colors/violet.css";
+@import "@radix-ui/colors/mauve.css";
+
 /* Custom Dark Mode Styling */
 [data-theme="dark"] {
   --color-background: #44444c;
@@ -5,6 +8,16 @@
     --color-border: #272727;  */
   /* --color-text: #ddaf16; */
   color: #f7f4ea;
+}
+
+/* .app > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+#cvBtn {
+  box-sizing: border-box;
 }
 
 .mWidth {
@@ -20,11 +33,21 @@
   align-items: end;
   padding-top: 15%;
   height: 70vh;
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  fill: var(--mauve-2);
+  z-index: -1;
 }
 
 .homeDiv {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .mainBody {
@@ -62,16 +85,25 @@
   width: 350px;
   padding-left: 50px;
   position: relative;
+  transition: 0.5s;
 }
 
 .projectCard:hover {
-  background-color: #d6d7fa;
+  background-color: var(--violet-11);
   color: #44444c;
-  transition: 0.3s;
+  transform: translate(0, -16px);
+  transition: 0.5s;
 }
 
 .projectCardImg {
   position: absolute;
   right: -70px;
   bottom: -50px;
+  max-width: 300px;
+  filter: drop-shadow(2px 1px 0 var(--mauve-12))
+    drop-shadow(-1px -1px 0 var(--mauve-12));
+}
+
+.titleCard {
+  height: 140px;
 }

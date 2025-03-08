@@ -1,62 +1,124 @@
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Flex, Text, Button } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
-import { Container, Card, Inset, Strong, Avatar } from "@radix-ui/themes";
+import {
+  Container,
+  Card,
+  Inset,
+  Strong,
+  Avatar,
+  Badge,
+} from "@radix-ui/themes";
 
 export default function Home() {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 900, // Animation duration
+      easing: "ease-in-out", // Animation easing
+      once: false, // Whether animation should happen only once
+    });
+  }, []);
+
+  const handleMouseEnter = (index) => {
+    setHoveredCard(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+  };
+
   return (
     <div className="mainBody">
-      <div className="mWidth homeMainDiv">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 845"
+        fill="none"
+      >
+        <path d="M1.55504e-05 0H1440V845C1440 845 1226.5 619.722 741.5 473.25C256.5 326.777 142 158.025 1.55504e-05 74.6802C-1.9438e-05 59.0015 1.55504e-05 0 1.55504e-05 0Z" />
+      </svg>
+      <div className="mWidth homeMainDiv" data-aos="fade-up">
         <h1 align="right">Hi!</h1>
         <h3 align="right">
           I'm a UX/UI designer and a full stack web developer
         </h3>
+        <Button radius="full" variant="solid" size="4">
+          My work
+        </Button>
       </div>
-      <div className="mWidth homeDiv">
+      <div className="mWidth homeDiv" data-aos="fade-up">
         <h1 className="pageTitle">Projects</h1>
         <div id="projectsContainer">
-          <Card className="projectCard" radius="large">
-            <h2>Training Wheels</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              volutpat tincidunt mi tristique convallis. Vestibulum viverra
-              pulvinar mauris, eu molestie velit rutrum non.
-            </p>
-            <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
-              alt=""
-              className="projectCardImg"
-            />
-          </Card>
-          <Card className="projectCard" radius="large">
-            <h2>Training Wheels</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              volutpat tincidunt mi tristique convallis. Vestibulum viverra
-              pulvinar mauris, eu molestie velit rutrum non.
-            </p>
-            <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
-              alt=""
-              className="projectCardImg"
-            />
-          </Card>
-          <Card className="projectCard" radius="large">
-            <h2>Training Wheels</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              volutpat tincidunt mi tristique convallis. Vestibulum viverra
-              pulvinar mauris, eu molestie velit rutrum non.
-            </p>
-            <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
-              alt=""
-              className="projectCardImg"
-            />
-          </Card>
+          {["Training Wheels", "Project 2", "Project 3"].map((title, index) => (
+            <Card
+              key={index}
+              className="projectCard"
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <h2 className="titleCard">{title}</h2>
+              {hoveredCard === index ? (
+                <div>
+                  <Flex gap="2" wrap="wrap">
+                    <Badge
+                      variant="outline"
+                      radius="full"
+                      size="3"
+                      highContrast
+                    >
+                      In progress
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      radius="full"
+                      size="3"
+                      highContrast
+                    >
+                      In progress
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      radius="full"
+                      size="3"
+                      highContrast
+                    >
+                      In progress
+                    </Badge>
+                    <Badge
+                      variant="outline"
+                      radius="full"
+                      size="3"
+                      highContrast
+                    >
+                      In progress
+                    </Badge>
+                  </Flex>
+
+                  <Button radius="full" variant="solid" size="3">
+                    Learn more
+                  </Button>
+                </div>
+              ) : (
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  volutpat tincidunt mi tristique convallis. Vestibulum viverra
+                  pulvinar mauris, eu molestie velit rutrum non.
+                </p>
+              )}
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
+                alt=""
+                className="projectCardImg"
+              />
+            </Card>
+          ))}
         </div>
       </div>
       <div className="line"></div>
-      <div className="mWidth homeDiv">
+      <div className="mWidth homeDiv" data-aos="fade-up">
         <h1 className="pageTitle">About me</h1>
         <Flex gap="6">
           <Avatar
