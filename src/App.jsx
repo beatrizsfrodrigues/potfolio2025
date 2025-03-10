@@ -20,8 +20,8 @@ function App() {
   return (
     <div>
       <nav>
-        <Link to="/" className="navLink">
-          Home
+        <Link to="/" className="navTitle">
+          Bzz
         </Link>
         <div>
           <Link to="/projects" className="navLink">

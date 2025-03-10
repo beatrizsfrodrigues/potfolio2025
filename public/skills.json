@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "name": "CSS",
+    "icon": "",
+    "description": "I love using CSS to bring designs to life with smooth animations and clean layouts. It's my go-to for making web apps visually engaging."
+  },
+  {
+    "id": 1,
+    "name": "JavaScript",
+    "icon": "",
+    "description": "The backbone of interactivity! I enjoy using JavaScript to create dynamic, responsive experiences that make websites feel alive."
+  },
+  {
+    "id": 2,
+    "name": "Figma",
+    "icon": "",
+    "description": "My favorite tool for designing UI/UX. I use it to prototype ideas quickly and collaborate on sleek, user-friendly designs."
+  },
+  {
+    "id": 3,
+    "name": "Photoshop",
+    "icon": "",
+    "description": "Great for editing and enhancing images. I use it to create custom graphics, refine visuals, and add creative touches."
+  },
+  {
+    "id": 4,
+    "name": "Illustrator",
+    "icon": "",
+    "description": "Perfect for vector graphics and logo design. I use it to craft sharp, scalable illustrations and branding elements."
+  },
+  {
+    "id": 5,
+    "name": "Vue",
+    "icon": "",
+    "description": "I enjoy Vue for its simplicity and flexibility in building reactive web applications with a clean structure."
+  },
+  {
+    "id": 6,
+    "name": "Node.js",
+    "icon": "",
+    "description": "My choice for backend development. I use Node.js to build fast, scalable server-side applications and APIs."
+  },
+  {
+    "id": 7,
+    "name": "Bootstrap",
+    "icon": "",
+    "description": "Great for rapid UI development. I use Bootstrap to build responsive, mobile-friendly layouts with ease."
+  },
+  {
+    "id": 8,
+    "name": "Canvas 2D",
+    "icon": "",
+    "description": "A powerful tool for drawing graphics in the browser. I use it for creative coding and interactive visual elements."
+  },
+  {
+    "id": 9,
+    "name": "Three.js",
+    "icon": "",
+    "description": "I love using Three.js to create stunning 3D experiences on the web, from interactive animations to immersive environments."
+  }
+]

@@ -10,11 +10,18 @@
   color: #f7f4ea;
 }
 
-/* .app > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
+.navTitle {
+  font-family: Humanism;
+  color: #f7f4ea;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+.navLink {
+  color: #f7f4ea;
+  text-decoration: none;
+  font-size: 20px;
+}
 
 #cvBtn {
   box-sizing: border-box;
@@ -106,4 +113,14 @@ svg {
 
 .titleCard {
   height: 140px;
+}
+
+.badge {
+  border-radius: 32px;
+  background: linear-gradient(90deg, #797a9e 0%, rgba(152, 147, 218, 0) 76%);
+  color: #44444c;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
 }

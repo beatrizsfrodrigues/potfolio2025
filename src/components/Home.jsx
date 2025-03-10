@@ -62,39 +62,11 @@ export default function Home() {
               <h2 className="titleCard">{title}</h2>
               {hoveredCard === index ? (
                 <div>
-                  <Flex gap="2" wrap="wrap">
-                    <Badge
-                      variant="outline"
-                      radius="full"
-                      size="3"
-                      highContrast
-                    >
-                      In progress
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      radius="full"
-                      size="3"
-                      highContrast
-                    >
-                      In progress
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      radius="full"
-                      size="3"
-                      highContrast
-                    >
-                      In progress
-                    </Badge>
-                    <Badge
-                      variant="outline"
-                      radius="full"
-                      size="3"
-                      highContrast
-                    >
-                      In progress
-                    </Badge>
+                  <Flex gap="1" wrap="wrap">
+                    <p className="badge">something</p>
+                    <p className="badge">something</p>
+                    <p className="badge">something</p>
+                    <p className="badge">something</p>
                   </Flex>
 
                   <Button radius="full" variant="solid" size="3">
