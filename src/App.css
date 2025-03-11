@@ -34,6 +34,10 @@
   margin-right: auto;
 }
 
+.firstDiv {
+  padding-top: 160px;
+}
+
 .homeMainDiv {
   display: flex;
   flex-direction: column;
@@ -96,7 +100,7 @@ svg {
 }
 
 .projectCard:hover {
-  background-color: var(--violet-11);
+  background-color: var(--violet-12);
   color: #44444c;
   transform: translate(0, -16px);
   transition: 0.5s;
@@ -115,7 +119,30 @@ svg {
   height: 140px;
 }
 
-.badge {
+.lineContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border: #f7f4ea 2px solid;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+#projectInfo {
+  width: 50vw;
+}
+
+#projectsContainer {
+  overflow-y: auto;
+}
+
+#coisa {
+  background-color: aliceblue;
+}
+
+/* .badge {
   border-radius: 32px;
   background: linear-gradient(90deg, #797a9e 0%, rgba(152, 147, 218, 0) 76%);
   color: #44444c;
@@ -123,4 +150,4 @@ svg {
   padding: 8px 16px;
   justify-content: center;
   align-items: center;
-}
+} */

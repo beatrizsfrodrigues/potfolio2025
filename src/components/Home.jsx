@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Flex, Text, Button } from "@radix-ui/themes";
-import "@radix-ui/themes/styles.css";
 import {
+  Flex,
+  Text,
+  Button,
   Container,
   Card,
   Inset,
@@ -11,6 +12,7 @@ import {
   Avatar,
   Badge,
 } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
 
 export default function Home() {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -63,10 +65,7 @@ export default function Home() {
               {hoveredCard === index ? (
                 <div>
                   <Flex gap="1" wrap="wrap">
-                    <p className="badge">something</p>
-                    <p className="badge">something</p>
-                    <p className="badge">something</p>
-                    <p className="badge">something</p>
+                    <Badge>ola</Badge>
                   </Flex>
 
                   <Button radius="full" variant="solid" size="3">
