@@ -28,7 +28,7 @@
     "video_promotional": "https://res.cloudinary.com/dsdq3yrz5/video/upload/v1725375216/portfolio/VideoPromocional_prgmks.mp4",
     "poster": "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375653/portfolio/40210349_DanielaMoreira_P02C_IDA_v1-1_spjopj.png",
     "shortDescription": "A video platform to make learning traffic regulations engaging and interactive.",
-    "description": "Training Wheels was my first major college project, where we aimed to develop a video platform focused on road code."
+    "description": "Training Wheels was my first major college project, where we aimed to develop a <a href='https://example.com' target='_blank'>video platform</a> focused on road code."
   },
   {
     "id": 2,
@@ -75,7 +75,7 @@
   {
     "id": 5,
     "name": "Cinema Trindade",
-    "logo": "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1741814928/cinematrindade_logo_footer_1_lafpki.svg",
+    "logo": "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1741819260/images-removebg-preview_r5rnvy.png",
     "skills": [2],
     "photos": [
       "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725829696/portfolio/Captura_de_ecr%C3%A3_2024-09-08_220009_hpejyg.png",

@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Flex, Text, Button, Badge, Card } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
+import ProjectDescription from "./ProjectDescription";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]); // State to store projects data
@@ -61,7 +62,8 @@ export default function Projects() {
                   </Badge>
                 ))}
               </Flex>
-              <p>{selectedProject.description}</p>
+              <ProjectDescription description={selectedProject.description} />
+
               {selectedProject.poster && (
                 <>
                   <h3>Poster</h3>
