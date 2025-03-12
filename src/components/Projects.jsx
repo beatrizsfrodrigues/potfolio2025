@@ -1,30 +1,28 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  Flex,
-  Text,
-  Button,
-  Container,
-  Card,
-  Inset,
-  Strong,
-  Avatar,
-  Badge,
-} from "@radix-ui/themes";
+import { Flex, Text, Button, Badge, Card } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 
 export default function Projects() {
-  const [hoveredCard, setHoveredCard] = useState(null);
-
-  const [projects, setProjects] = useState([]); // State to store JSON data
+  const [projects, setProjects] = useState([]); // State to store projects data
+  const [skills, setSkills] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null); // Track selected project
 
   // Fetch JSON data
   useEffect(() => {
     fetch("/projects.json")
       .then((response) => response.json())
-      .then((data) => setProjects(data)) // Store fetched data in state
-      .catch((error) => console.error("Error fetching JSON:", error));
+      .then((data) => {
+        setProjects(data);
+        setSelectedProject(data[0]); // Set first project as default
+      })
+      .catch((error) => console.error("Error fetching projects:", error));
+
+    fetch("/skills.json")
+      .then((response) => response.json())
+      .then((data) => setSkills(data))
+      .catch((error) => console.error("Error fetching skills:", error));
   }, []);
 
   useEffect(() => {
@@ -35,86 +33,102 @@ export default function Projects() {
     });
   }, []);
 
-  const handleMouseEnter = (index) => {
-    setHoveredCard(index);
+  const getSkillName = (id) => {
+    const skill = skills.find((s) => s.id === id);
+    return skill ? skill.name : "Unknown Skill";
   };
 
-  const handleMouseLeave = () => {
-    setHoveredCard(null);
-  };
   return (
-    <div className="mWidth ">
+    <div className="mWidth">
       <h1 className="pageTitle firstDiv">Projects</h1>
       <Flex gap="4" height="84vh">
+        {/* Project Details Section */}
         <div className="lineContainer" id="projectInfo">
-          <img
-            src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
-            className="projectImg"
-            alt=""
-          />
-          <h2>Titulo</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            volutpat tincidunt mi tristique convallis. Vestibulum viverra
-            pulvinar mauris, eu molestie velit rutrum non.
-          </p>
-          <Flex gap="1" wrap="wrap">
-            <Badge size="3">JavaScript</Badge> <Badge size="3">Bootstrap</Badge>
-            <Badge size="3">Figma</Badge> <Badge size="3">Illustrator</Badge>
-            <Badge size="3">JavaScript</Badge> <Badge size="3">Bootstrap</Badge>
-            <Badge size="3">Figma</Badge> <Badge size="3">Illustrator</Badge>
-          </Flex>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            volutpat tincidunt mi tristique convallis. Vestibulum viverra
-            pulvinar mauris, eu molestie velit rutrum non.
-          </p>
-          <h3>Poster</h3>
-          <img
-            src="https://d1csarkz8obe9u.cloudfront.net/themedlandingpages/tlp_hero_vintage-posters-e4806ad9b3d6f2f2f0e5d8709ae1d222.jpg"
-            className="projectPoster"
-            alt=""
-          />
-          <h3>Promotional video</h3>
-          <img
-            src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
-            className="projectVideo"
-            alt=""
-          />
+          {selectedProject ? (
+            <>
+              <img
+                src={selectedProject.photos?.[0]}
+                className="projectImg"
+                alt={selectedProject.name}
+              />
+              <h2>{selectedProject.name}</h2>
+              <p>{selectedProject.shortDescription}</p>
 
-          <h3>Video tour</h3>
-          <img
-            src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
-            className="projectVideo"
-            alt=""
-          />
+              <Flex gap="1" wrap="wrap">
+                {selectedProject.skills.map((skillId, i) => (
+                  <Badge key={i} size="3">
+                    {getSkillName(skillId)}
+                  </Badge>
+                ))}
+              </Flex>
+              <p>{selectedProject.description}</p>
+              {selectedProject.poster && (
+                <>
+                  <h3>Poster</h3>
+                  <img
+                    src={selectedProject.poster}
+                    className="projectPoster"
+                    alt="Project Poster"
+                  />
+                </>
+              )}
+
+              {selectedProject.video_promotional && (
+                <>
+                  <h3>Promotional Video</h3>
+                  <video className="projectVideo" controls>
+                    <source
+                      src={selectedProject.video_promotional}
+                      type="video/mp4"
+                    />
+                  </video>
+                </>
+              )}
+
+              {selectedProject.video_tour && (
+                <>
+                  <h3>Video Tour</h3>
+                  <video
+                    key={selectedProject.id + "-tour"}
+                    className="projectVideo"
+                    controls
+                  >
+                    <source src={selectedProject.video_tour} type="video/mp4" />
+                  </video>
+                </>
+              )}
+            </>
+          ) : (
+            <p>Loading project details...</p>
+          )}
         </div>
+
+        {/* Project List Section */}
         <div className="lineContainer" id="projectsPContainer">
-          {/* <div id="coisa"> */}
           {projects.map((project, index) => (
             <Card
               key={project.name}
-              className="projectCard cardsProjects"
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
+              className={`projectCard cardsProjects ${
+                selectedProject?.id === project.id ? "active" : ""
+              }`}
             >
               <h2 className="titleCard">{project.name}</h2>
+              <p>{project.shortDescription}</p>
 
-              <div>
-                <p>{project.shortDescription}</p>
-                <Button radius="full" variant="solid" size="3">
-                  Learn more
-                </Button>
-              </div>
+              <Button
+                radius="full"
+                variant="solid"
+                size="3"
+                onClick={() => setSelectedProject(project)}
+              >
+                Learn more
+              </Button>
 
-              <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
-                alt=""
-                className="projectCardImg"
-              />
+              {project.logo && (
+                <img src={project.logo} alt="" className="projectCardImg" />
+              )}
             </Card>
           ))}
-          {/* </div> */}
         </div>
       </Flex>
     </div>

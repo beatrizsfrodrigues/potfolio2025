@@ -109,9 +109,10 @@ svg {
 
 .projectCardImg {
   position: absolute;
-  right: -70px;
-  bottom: -50px;
-  max-width: 300px;
+  right: -30px;
+  bottom: -20px;
+  width: 200px;
+  height: 200px;
   filter: drop-shadow(2px 1px 0 var(--mauve-12))
     drop-shadow(-1px -1px 0 var(--mauve-12));
 }
