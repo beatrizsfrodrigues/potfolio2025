@@ -92,8 +92,8 @@ svg {
 }
 
 .projectCard {
-  height: 500px;
-  width: 350px;
+  height: 480px;
+  width: 340px;
   padding-left: 50px;
   position: relative;
   transition: 0.5s;
@@ -131,23 +131,30 @@ svg {
 }
 
 #projectInfo {
-  width: 50vw;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  overflow-y: auto;
+  gap: 16px;
+  padding: 32px;
 }
 
-#projectsContainer {
+#projectsPContainer {
   overflow-y: auto;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 32px;
+  justify-content: start;
 }
 
 #coisa {
-  background-color: aliceblue;
+  align-items: start;
+  justify-content: start;
+  margin-top: 100px;
+  /* background-color: aliceblue; */
 }
-
-/* .badge {
-  border-radius: 32px;
-  background: linear-gradient(90deg, #797a9e 0%, rgba(152, 147, 218, 0) 76%);
-  color: #44444c;
-  display: flex;
-  padding: 8px 16px;
-  justify-content: center;
-  align-items: center;
-} */
