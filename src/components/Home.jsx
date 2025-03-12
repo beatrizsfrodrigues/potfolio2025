@@ -62,23 +62,16 @@ export default function Home() {
               onMouseLeave={handleMouseLeave}
             >
               <h2 className="titleCard">{title}</h2>
-              {hoveredCard === index ? (
-                <div>
-                  <Flex gap="1" wrap="wrap">
-                    <Badge>ola</Badge>
-                  </Flex>
 
-                  <Button radius="full" variant="solid" size="3">
-                    Learn more
-                  </Button>
-                </div>
-              ) : (
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  volutpat tincidunt mi tristique convallis. Vestibulum viverra
-                  pulvinar mauris, eu molestie velit rutrum non.
-                </p>
-              )}
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                volutpat tincidunt mi tristique convallis. Vestibulum viverra
+                pulvinar mauris, eu molestie velit rutrum non.
+              </p>
+              <Button radius="full" variant="solid" size="3">
+                Learn more
+              </Button>
+
               <img
                 src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
                 alt=""

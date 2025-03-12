@@ -100,9 +100,10 @@ svg {
 }
 
 .projectCard:hover {
-  background-color: var(--violet-12);
-  color: #44444c;
-  transform: translate(0, -16px);
+  /* background-color: var(--violet-12);
+  color: #44444c; */
+  box-shadow: 0px 00px 15px 4px #62615f;
+  transform: translate(0, -8px);
   transition: 0.5s;
 }
 
@@ -152,9 +153,25 @@ svg {
   justify-content: start;
 }
 
-#coisa {
-  align-items: start;
-  justify-content: start;
-  margin-top: 100px;
-  /* background-color: aliceblue; */
+.projectImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.projectPoster {
+  width: 60%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectVideo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
 }
