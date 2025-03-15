@@ -39,6 +39,7 @@ export default function Home() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 845"
         fill="none"
+        id="backgroundSvg"
       >
         <path d="M1.55504e-05 0H1440V845C1440 845 1226.5 619.722 741.5 473.25C256.5 326.777 142 158.025 1.55504e-05 74.6802C-1.9438e-05 59.0015 1.55504e-05 0 1.55504e-05 0Z" />
       </svg>

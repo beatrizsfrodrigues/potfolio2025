@@ -29,8 +29,28 @@ footer {
   height: 200px;
   color: #c6c3bb;
   display: flex;
-  justify-content: center;
-  align-items: end;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+#contactsFooter,
+#workFooter {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  /* background-color: antiquewhite; */
+  gap: 32px;
+}
+
+#contactsFooter > div,
+#workFooter > div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
 }
 
 body {

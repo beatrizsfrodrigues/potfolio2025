@@ -12,13 +12,13 @@
 
 .navTitle {
   font-family: Humanism;
-  color: #f7f4ea;
+  color: #eeeef0;
   text-decoration: none;
   font-size: 32px;
 }
 
 .navLink {
-  color: #f7f4ea;
+  color: #eeeef0;
   text-decoration: none;
   font-size: 20px;
 }
@@ -47,7 +47,7 @@
   position: relative;
 }
 
-svg {
+#backgroundSvg {
   position: absolute;
   width: 100vw;
   top: 0;
@@ -73,7 +73,7 @@ svg {
 }
 
 .line {
-  border-top: 2px solid #f7f4ea;
+  border-top: 2px solid #eeeef0;
   width: 100vw;
   padding: 0px;
   margin: 0px;
@@ -127,7 +127,7 @@ svg {
   justify-content: center;
   align-items: center;
   gap: 16px;
-  border: #f7f4ea 2px solid;
+  border: #eeeef0 2px solid;
   border-radius: 8px;
   margin-bottom: 40px;
 }
@@ -140,27 +140,36 @@ svg {
   align-items: start;
   justify-content: start;
   overflow-y: auto;
+  overflow-x: none;
   gap: 16px;
   padding: 32px;
 }
 
 #projectsPContainer {
-  overflow-y: auto;
-  width: fit-content;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+  width: 100%;
+  padding-top: 0px;
+  align-items: start;
+}
+
+#projectsPContainer > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Exactly 2 columns */
   gap: 32px;
   padding: 32px;
-  justify-content: start;
+  justify-content: center;
+  align-content: start;
+  max-width: fit-content;
 }
 
-.projectImg {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
+@media (max-width: 700px) {
+  /* Make it 1 column on smaller screens */
+  #projectsPContainer > div {
+    grid-template-columns: 1fr;
+  }
 }
-
 .projectPoster {
   width: 60%;
   height: 440px;
@@ -175,4 +184,47 @@ svg {
   height: 300px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.imageSlider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.projectImg {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.slideBtn {
+  background: none;
+  color: var(--mauve-1);
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+}
+
+.svgBtn {
+  stroke: #eeeef0;
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.slideBtn:first-child {
+  left: -20px;
+}
+
+.slideBtn:last-child {
+  right: -20px;
 }
