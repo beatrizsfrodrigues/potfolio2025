@@ -21,7 +21,7 @@ function App() {
     <div>
       <nav>
         <Link to="/" className="navTitle">
-          Bzz
+          Beatriz
         </Link>
         <div>
           <Link to="/projects" className="navLink">

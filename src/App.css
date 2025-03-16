@@ -10,6 +10,12 @@
   color: #f7f4ea;
 }
 
+#pcImg {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+}
+
 .navTitle {
   font-family: Humanism;
   color: #eeeef0;
@@ -140,7 +146,7 @@
   align-items: start;
   justify-content: start;
   overflow-y: auto;
-  overflow-x: none;
+  overflow-x: hidden;
   gap: 16px;
   padding: 32px;
 }
