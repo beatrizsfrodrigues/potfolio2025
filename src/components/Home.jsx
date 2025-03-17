@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
@@ -15,83 +16,174 @@ import {
 import "@radix-ui/themes/styles.css";
 
 export default function Home() {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [projects, setProjects] = useState([]);
+  const [skills, setSkills] = useState([]);
+  const [currentSlide, setCurrentSlide] = useState(0); // Track the current slide
+
+  const projectIdsToShow = [1, 2, 3, 4];
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({
-      duration: 900, // Animation duration
-      easing: "ease-in-out", // Animation easing
-      once: false, // Whether animation should happen only once
+      duration: 900,
+      easing: "ease-in-out",
+      once: false,
     });
   }, []);
 
-  const handleMouseEnter = (index) => {
-    setHoveredCard(index);
+  useEffect(() => {
+    fetch("/projects.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setProjects(data);
+      })
+      .catch((error) => console.error("Error fetching projects:", error));
+
+    fetch("/skills.json")
+      .then((response) => response.json())
+      .then((data) => setSkills(data))
+      .catch((error) => console.error("Error fetching skills:", error));
+  }, []);
+
+  const filteredProjects = projects.filter((project) =>
+    projectIdsToShow.includes(project.id)
+  );
+
+  // Handle navigation to next slide
+  const goToNextSlide = () => {
+    if (currentSlide < filteredProjects.length + 1 - 3) {
+      setCurrentSlide((prevSlide) => prevSlide + 1);
+    }
   };
 
-  const handleMouseLeave = () => {
-    setHoveredCard(null);
+  // Handle navigation to previous slide
+  const goToPreviousSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide((prevSlide) => prevSlide - 1);
+    }
+  };
+
+  const handleLearnMore = (project) => {
+    // Navigate to the projects page and pass the project ID in the URL
+    navigate(`/projects/${project.id}`);
   };
 
   return (
     <div className="mainBody">
-      <img src="/pc.png" alt="" id="pcImg" data-aos="fade-up" />
-      {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 845"
-        fill="none"
-        id="backgroundSvg"
-      >
-        <path d="M1.55504e-05 0H1440V845C1440 845 1226.5 619.722 741.5 473.25C256.5 326.777 142 158.025 1.55504e-05 74.6802C-1.9438e-05 59.0015 1.55504e-05 0 1.55504e-05 0Z" />
-      </svg> */}
       <div className="mWidth homeMainDiv" data-aos="fade-up">
-        <h1 align="right">Hi!</h1>
-        <h3 align="right">
-          I'm a UX/UI designer and a full stack web developer
+        <h1 align="left">Hi!</h1>
+        <h3 align="left">
+          I'm a UX/UI designer and a Full-stack Web Developer
         </h3>
         <Button radius="full" variant="solid" size="4">
           My work
         </Button>
       </div>
+
+      <img src="/pc.png" alt="" id="pcImg" data-aos="fade-up" />
       <div className="mWidth homeDiv" data-aos="fade-up">
         <h1 className="pageTitle">Projects</h1>
-        <div id="projectsContainer">
-          {["Training Wheels", "Project 2", "Project 3"].map((title, index) => (
-            <Card
-              key={index}
-              className="projectCard"
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <h2 className="titleCard">{title}</h2>
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                volutpat tincidunt mi tristique convallis. Vestibulum viverra
-                pulvinar mauris, eu molestie velit rutrum non.
-              </p>
-              <Button radius="full" variant="solid" size="3">
-                Learn more
-              </Button>
-
-              <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
-                alt=""
-                className="projectCardImg"
-              />
+        {/* Carousel Container */}
+        <div className="carousel-container">
+          {/* Carousel Content */}
+          <div
+            className="carousel-content"
+            style={{
+              transform: `translateX(-${currentSlide * (107 / 3)}%)`,
+            }}
+          >
+            {filteredProjects.map((project, index) => (
+              <Card key={index} className="projectCard">
+                <h2 className="titleCard">{project.name}</h2>
+                <p>{project.shortDescription}</p>
+                <Button
+                  radius="full"
+                  variant="solid"
+                  size="3"
+                  onClick={() => navigate(`/projects/${project.id}`)}
+                >
+                  Learn more
+                </Button>
+                {project.logo && (
+                  <img src={project.logo} alt="" className="projectCardImg" />
+                )}
+              </Card>
+            ))}
+            <Card className="projectCard" id="lastCard">
+              <h2>Want to see more projects?</h2>
+              <Link to="/projects">
+                <Button radius="full" variant="solid" size="3">
+                  See all
+                </Button>
+              </Link>
             </Card>
-          ))}
+          </div>
+
+          {/* Navigation Buttons */}
+          <button onClick={goToPreviousSlide} className="carousel-nav prev">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="svgBtn"
+            >
+              <path
+                d="M8.84182 3.13514C9.04327 3.32401 9.05348 3.64042 8.86462 3.84188L5.43521 7.49991L8.86462 11.1579C9.05348 11.3594 9.04327 11.6758 8.84182 11.8647C8.64036 12.0535 8.32394 12.0433 8.13508 11.8419L4.38508 7.84188C4.20477 7.64955 4.20477 7.35027 4.38508 7.15794L8.13508 3.15794C8.32394 2.95648 8.64036 2.94628 8.84182 3.13514Z"
+                stroke="black"
+                stroke-width="5"
+                stroke-linejoin="round"
+                fill="none"
+              />
+              {/* Inner Fill Path */}
+              <path
+                d="M8.84182 3.13514C9.04327 3.32401 9.05348 3.64042 8.86462 3.84188L5.43521 7.49991L8.86462 11.1579C9.05348 11.3594 9.04327 11.6758 8.84182 11.8647C8.64036 12.0535 8.32394 12.0433 8.13508 11.8419L4.38508 7.84188C4.20477 7.64955 4.20477 7.35027 4.38508 7.15794L8.13508 3.15794C8.32394 2.95648 8.64036 2.94628 8.84182 3.13514Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          {/* <Button className="carousel-nav prev" onClick={goToPreviousSlide}>
+            &#8592; 
+          </Button> */}
+
+          <button onClick={goToNextSlide} className="carousel-nav next">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="svgBtn"
+            >
+              <path
+                d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"
+                stroke="black"
+                stroke-width="5" /* Bigger stroke */
+                stroke-linejoin="round"
+                fill="none"
+              />
+
+              {/* Inner fill (original path) */}
+              <path
+                d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          {/* <Button className="carousel-nav next" onClick={goToNextSlide}>
+            &#8594; 
+          </Button> */}
         </div>
       </div>
+
       <div className="line"></div>
       <div className="mWidth homeDiv" data-aos="fade-up">
         <h1 className="pageTitle">About me</h1>
         <Flex gap="6">
-          <Avatar
-            src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
-            fallback="B"
-            size="9"
-          />
+          <Avatar src="/pfp.png" fallback="B" size="9" />
           <div>
             <p className="meDescription">
               Hi! I’m Beatriz, a UX/UI designer and full-stack web developer

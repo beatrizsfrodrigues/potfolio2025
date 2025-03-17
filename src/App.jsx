@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,9 +9,18 @@ import {
 import "./App.css";
 import "@radix-ui/themes/styles.css";
 import { Theme, Button } from "@radix-ui/themes";
-
 import Home from "./components/Home";
 import Projects from "./components/Projects";
+
+const ScrollToTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top of the page
+  }, [location]); // Trigger whenever the route (location) changes
+
+  return null;
+};
 
 function App() {
   const location = useLocation();
@@ -33,16 +42,14 @@ function App() {
         </div>
       </nav>
 
+      <ScrollToTop />
+
       <Routes location={state.backgroundLocation || location}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:id" element={<Projects />} />
       </Routes>
 
-      {/* {state.backgroundLocation && (
-        <Routes>
-          <Route path="/villager/:name" element={<VillagerInfo />} />
-        </Routes>
-      )} */}
       <div className="line"></div>
       <footer>
         <div className="mWidth" id="contactsFooter">

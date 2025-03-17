@@ -1,11 +1,27 @@
 import { useEffect, useState } from "react";
+import { useParams, Navigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Flex, Text, Button, Badge, Card, HoverCard } from "@radix-ui/themes";
+import {
+  Flex,
+  Text,
+  Button,
+  Badge,
+  Card,
+  HoverCard,
+  Spinner,
+} from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import ProjectDescription from "./ProjectDescription";
 
 export default function Projects() {
+  const { id } = useParams();
+
+  if (!id) {
+    // Redirect to the first project if no ID is provided
+    return <Navigate to="/projects/0" replace />;
+  }
+
   const [projects, setProjects] = useState([]); // State to store projects data
   const [skills, setSkills] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null); // Track selected project
@@ -25,7 +41,8 @@ export default function Projects() {
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
-        setSelectedProject(data[0]); // Set first project as default
+        const project = data.find((proj) => proj.id === parseInt(id));
+        setSelectedProject(project || projects[0]);
       })
       .catch((error) => console.error("Error fetching projects:", error));
 
@@ -195,7 +212,9 @@ export default function Projects() {
               )}
             </>
           ) : (
-            <p>Loading project details...</p>
+            <Flex align="center" justify="center" width={100} height={100}>
+              <Spinner size="3" />
+            </Flex>
           )}
         </div>
 
@@ -206,30 +225,36 @@ export default function Projects() {
           data-aos="fade-up"
         >
           <div>
-            {projects.map((project, index) => (
-              <Card
-                key={project.name}
-                className={`projectCard cardsProjects ${
-                  selectedProject?.id === project.id ? "active" : ""
-                }`}
-              >
-                <h2 className="titleCard">{project.name}</h2>
-                <p>{project.shortDescription}</p>
-
-                <Button
-                  radius="full"
-                  variant="solid"
-                  size="3"
-                  onClick={() => handleLearnMore(project)}
+            {projects.length ? (
+              projects.map((project, index) => (
+                <Card
+                  key={project.name}
+                  className={`projectCard cardsProjects ${
+                    selectedProject?.id === project.id ? "active" : ""
+                  }`}
                 >
-                  Learn more
-                </Button>
+                  <h2 className="titleCard">{project.name}</h2>
+                  <p>{project.shortDescription}</p>
 
-                {project.logo && (
-                  <img src={project.logo} alt="" className="projectCardImg" />
-                )}
-              </Card>
-            ))}
+                  <Button
+                    radius="full"
+                    variant="solid"
+                    size="3"
+                    onClick={() => handleLearnMore(project)}
+                  >
+                    Learn more
+                  </Button>
+
+                  {project.logo && (
+                    <img src={project.logo} alt="" className="projectCardImg" />
+                  )}
+                </Card>
+              ))
+            ) : (
+              <Flex align="center" justify="center" width={100} height={100}>
+                <Spinner size="3" />
+              </Flex>
+            )}
           </div>
         </div>
       </Flex>

@@ -6,7 +6,7 @@
 
 nav {
   max-width: 1700px;
-  padding: 32px 64px;
+  padding: 32px 80px;
   position: fixed;
   width: 100vw;
   height: 48px;
@@ -17,6 +17,7 @@ nav {
   box-sizing: border-box;
   left: 50%;
   transform: translate(-50%, 0);
+  background-color: #121113;
 }
 
 nav > div {
@@ -79,7 +80,7 @@ h3 {
   font-size: 40px;
   font-family: Quicksand, sans-serif;
   font-weight: 400;
-  max-width: 600px;
+  max-width: 840px;
   right: 0px;
   margin: 0px;
 }
