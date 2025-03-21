@@ -26,6 +26,8 @@ export default function Projects() {
   const [skills, setSkills] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null); // Track selected project
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -33,6 +35,13 @@ export default function Projects() {
       easing: "ease-in-out", // Animation easing
       once: false, // Whether animation should happen only once
     });
+
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Fetch JSON data

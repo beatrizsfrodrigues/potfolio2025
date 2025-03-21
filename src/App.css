@@ -155,7 +155,7 @@
 
 #projectInfo {
   width: 100%;
-  max-width: 480px;
+  /* max-width: 480px; */
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -171,6 +171,7 @@
   justify-content: center;
   overflow-y: auto;
   width: 100%;
+  min-width: 760px;
   padding-top: 0px;
   align-items: start;
 }
