@@ -192,9 +192,9 @@ export default function Home() {
               Technologies at the University of Aveiro, where I’m deepening my
               knowledge of design, development, and innovative web solutions.
             </p>
-            <Button radius="full" variant="solid" size="3">
+            {/* <Button radius="full" variant="solid" size="3">
               Learn more
-            </Button>
+            </Button> */}
           </div>
         </Flex>
       </div>

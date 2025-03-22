@@ -3,60 +3,102 @@
     "id": 0,
     "name": "CSS",
     "icon": "",
-    "description": "I love using CSS to bring designs to life with smooth animations and clean layouts. It's my go-to for making web apps visually engaging."
+    "description": "I bring designs to life with CSS, crafting smooth animations, responsive layouts, and visually stunning web experiences."
   },
   {
     "id": 1,
     "name": "JavaScript",
     "icon": "",
-    "description": "The backbone of interactivity! I enjoy using JavaScript to create dynamic, responsive experiences that make websites feel alive."
+    "description": "The heart of web interactivity! I use JavaScript to build dynamic, responsive experiences that make websites feel alive."
   },
   {
     "id": 2,
     "name": "Figma",
     "icon": "",
-    "description": "My favorite tool for designing UI/UX. I use it to prototype ideas quickly and collaborate on sleek, user-friendly designs."
+    "description": "My go-to for UI/UX design! I use Figma to prototype, collaborate, and create sleek, user-friendly interfaces with ease."
   },
   {
     "id": 3,
     "name": "Photoshop",
     "icon": "",
-    "description": "Great for editing and enhancing images. I use it to create custom graphics, refine visuals, and add creative touches."
+    "description": "Perfect for crafting and enhancing visuals. I use Photoshop to create stunning graphics, edit images, and refine designs."
   },
   {
     "id": 4,
     "name": "Illustrator",
     "icon": "",
-    "description": "Perfect for vector graphics and logo design. I use it to craft sharp, scalable illustrations and branding elements."
+    "description": "Ideal for vector design and branding. I use Illustrator to create sharp, scalable graphics, from logos to custom illustrations."
   },
   {
     "id": 5,
     "name": "Vue",
     "icon": "",
-    "description": "I enjoy Vue for its simplicity and flexibility in building reactive web applications with a clean structure."
+    "description": "I love Vue for its simplicity and efficiency, making it easy to build reactive, scalable web applications with clean architecture."
   },
   {
     "id": 6,
     "name": "Node.js",
     "icon": "",
-    "description": "My choice for backend development. I use Node.js to build fast, scalable server-side applications and APIs."
+    "description": "My go-to for backend development! I use Node.js to build fast, scalable APIs and real-time applications with ease."
   },
   {
     "id": 7,
     "name": "Bootstrap",
     "icon": "",
-    "description": "Great for rapid UI development. I use Bootstrap to build responsive, mobile-friendly layouts with ease."
+    "description": "A powerful framework for rapid UI development!"
   },
   {
     "id": 8,
-    "name": "Canvas 2D",
+    "name": "Canvas",
     "icon": "",
-    "description": "A powerful tool for drawing graphics in the browser. I use it for creative coding and interactive visual elements."
+    "description": "I once built a game using Canvas 2D! It's a powerful tool for creating interactive visuals, animations, and game mechanics directly in the browser."
   },
   {
     "id": 9,
     "name": "Three.js",
     "icon": "",
-    "description": "I love using Three.js to create stunning 3D experiences on the web, from interactive animations to immersive environments."
+    "description": "I used Three.js to develop a game, bringing 3D graphics and interactive environments to life. It's my go-to for immersive web experiences."
+  },
+  {
+    "id": 10,
+    "name": "React",
+    "icon": "",
+    "description": "I use React to create fast, modular, and scalable web applications with ease."
+  },
+  {
+    "id": 11,
+    "name": "After Effects",
+    "icon": "",
+    "description": "Perfect for motion graphics and animations. I use After Effects to create animated videos for my projects."
+  },
+  {
+    "id": 12,
+    "name": "Whimsical",
+    "icon": "",
+    "description": "A great tool for wireframing and brainstorming. I use Whimsical to map out ideas, workflows, and UI structures visually."
+  },
+  {
+    "id": 13,
+    "name": "Group Project",
+    "icon": "",
+    "description": "Couldn't have done it without my team! :)"
+  },
+  {
+    "id": 14,
+    "name": "ESMAD",
+    "icon": "",
+    "description": "School project done at School of Media Arts and Design."
+  },
+  {
+    "id": 15,
+    "name": "ERASMUS+",
+    "icon": "",
+    "description": "School project done at Lodz University of Technology."
+  },
+  {
+    "id": 16,
+    "name": "UA",
+    "icon": "",
+    "description": "School project done at University of Aveiro."
   }
 ]
