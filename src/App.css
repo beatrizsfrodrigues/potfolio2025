@@ -186,12 +186,6 @@
   max-width: fit-content;
 }
 
-@media (max-width: 700px) {
-  /* Make it 1 column on smaller screens */
-  #projectsPContainer > div {
-    grid-template-columns: 1fr;
-  }
-}
 .projectPoster {
   width: 60%;
   height: 440px;
@@ -221,7 +215,7 @@
 
 .projectImg {
   width: 100%;
-  height: 100%;
+  height: 180px;
   transition: opacity 0.5s ease-in-out;
   border-radius: 8px;
   object-fit: cover;
@@ -298,4 +292,103 @@
 
 .carousel-nav.next {
   right: -22px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--mauve-3);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+  height: 90vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#projectsContainer {
+  height: 84vh;
+}
+
+@media screen and (max-width: 1280px) {
+  /* Container for the entire carousel */
+  .carousel-container {
+    width: calc(
+      340px * 2 + 24px
+    ); /* Ensures the container takes up full width */
+  }
+
+  .carousel-content {
+    width: calc(340px * 2);
+  }
+
+  /* Each card takes up 1/3 of the container's width */
+  .carousel-content .projectCard {
+    width: 50%;
+  }
+
+  #projectsPContainer {
+    overflow-y: hidden;
+    border: none;
+    height: fit-content;
+  }
+
+  #projectsContainer {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mWidth {
+    padding: 40px 40px;
+  }
+
+  .projectCard {
+    height: 380px;
+    width: 280px;
+  }
+
+  .projectCardImg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .carousel-content,
+  .carousel-container {
+    width: calc(340px * 1);
+  }
+
+  /* Each card takes up 1/3 of the container's width */
+  .carousel-content .projectCard {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  /* Make it 1 column on smaller screens */
+  #projectsPContainer > div {
+    grid-template-columns: 1fr;
+  }
 }
