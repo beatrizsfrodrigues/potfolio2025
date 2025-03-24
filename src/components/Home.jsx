@@ -20,6 +20,7 @@ export default function Home() {
   const [skills, setSkills] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0); // Track the current slide
   const [slidesPerView, setSlidesPerView] = useState(3);
+  const [num, setNum] = useState(0);
 
   const projectIdsToShow = [1, 2, 3, 4];
 
@@ -50,10 +51,13 @@ export default function Home() {
   useEffect(() => {
     const updateSlidesPerView = () => {
       if (window.innerWidth <= 1024) {
+        setNum(1.5);
         setSlidesPerView(1);
       } else if (window.innerWidth <= 1280) {
+        setNum(0);
         setSlidesPerView(2);
       } else {
+        setNum(0);
         setSlidesPerView(3);
       }
     };
@@ -85,7 +89,14 @@ export default function Home() {
       <div className="mWidth homeMainDiv" data-aos="fade-up">
         <h1 align="left">Hi!</h1>
         <h3 align="left">I'm a UX/UI designer and Full-stack Web Developer</h3>
-        <Button radius="full" variant="solid" size="4">
+        <Button
+          radius="full"
+          variant="solid"
+          size={{
+            initial: "3",
+            md: "4",
+          }}
+        >
           My work
         </Button>
       </div>
@@ -101,7 +112,7 @@ export default function Home() {
             className="carousel-content"
             style={{
               transform: `translateX(-${
-                currentSlide * (107 / slidesPerView)
+                currentSlide * (107 / slidesPerView + num)
               }%)`,
             }}
           >
@@ -112,7 +123,10 @@ export default function Home() {
                 <Button
                   radius="full"
                   variant="solid"
-                  size="3"
+                  size={{
+                    initial: "2",
+                    md: "3",
+                  }}
                   onClick={() => navigate(`/projects/${project.id}`)}
                 >
                   Learn more
@@ -193,8 +207,15 @@ export default function Home() {
       <div className="line"></div>
       <div className="mWidth homeDiv" data-aos="fade-up">
         <h1 className="pageTitle">About me</h1>
-        <Flex gap="6">
-          <Avatar src="/pfp.png" fallback="B" size="9" />
+        <Flex gap="6" id="meDiv">
+          <Avatar
+            src="/pfp.png"
+            fallback="B"
+            size={{
+              initial: "8",
+              md: "9",
+            }}
+          />
           <div>
             <p className="meDescription">
               Hi! I’m Beatriz, a UX/UI designer and full-stack web developer
