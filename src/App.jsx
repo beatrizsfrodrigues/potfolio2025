@@ -64,7 +64,7 @@ function App() {
       </nav> */}
 
       <nav className="navbar">
-        <Link to="/" className="navTitle">
+        <Link to="/" className="navTitle" onClick={() => setIsOpen(false)}>
           Beatriz
         </Link>
 
@@ -109,7 +109,11 @@ function App() {
 
         {/* Navigation links */}
         <div className={`navLinks ${isOpen ? "open" : ""}`}>
-          <Link to="/projects" className="navLink">
+          <Link
+            to="/projects"
+            className="navLink"
+            onClick={() => setIsOpen(false)}
+          >
             Projects
           </Link>
           <a href="/cv.pdf" download="Beatriz_Rodrigues_CV">
@@ -121,6 +125,7 @@ function App() {
                 md: "4",
               }}
               id="cvBtn"
+              onClick={() => setIsOpen(false)}
             >
               Get my CV!
             </Button>
