@@ -39,6 +39,7 @@
   max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: hidden;
 }
 
 .firstDiv {
@@ -53,6 +54,7 @@
   height: 70vh;
   position: relative;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .homeMainDiv > h1 {
@@ -76,6 +78,7 @@
 .homeDiv {
   padding-top: 80px;
   padding-bottom: 80px;
+  overflow-x: hidden;
 }
 
 .mainBody {
@@ -337,8 +340,15 @@
     padding: 40px 40px;
   }
 
+  .homeMainDiv {
+    padding-top: 20vh;
+  }
+
   #pcImg {
-    display: none;
+    /* display: none; */
+    top: 15%;
+    right: 4%;
+    width: 36vw;
   }
   /* Container for the entire carousel */
   .carousel-container {
@@ -392,6 +402,17 @@
     font-size: 24px;
     margin-bottom: 24px;
     width: 80%;
+  }
+
+  #pcImg {
+    /* display: none; */
+    bottom: 200px;
+    right: 4%;
+    width: 46vw;
+  }
+
+  .firstDiv {
+    padding-top: 80px;
   }
 
   .projectCard {
