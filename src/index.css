@@ -27,7 +27,7 @@ nav > div {
 }
 
 footer {
-  height: 200px;
+  min-height: 200px;
   color: #c6c3bb;
   display: flex;
   flex-direction: column;
@@ -83,4 +83,79 @@ h3 {
   max-width: 840px;
   right: 0px;
   margin: 0px;
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+  width: 48px;
+}
+
+.navLinks.open {
+  display: flex;
+  /* Add styling for mobile view when open */
+}
+
+@media screen and (max-width: 1280px) {
+  nav {
+    padding: 32px 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  nav {
+    padding: 32px 20px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2,
+  h3 {
+    font-size: 32px;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #121113 0%, rgba(18, 17, 19, 0.8) 100%);
+    backdrop-filter: blur(2px);
+    flex-direction: column;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  footer {
+    align-items: center;
+  }
+
+  #contactsFooter,
+  #workFooter {
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+  }
+
+  #contactsFooter {
+    margin-bottom: -52px;
+  }
 }
