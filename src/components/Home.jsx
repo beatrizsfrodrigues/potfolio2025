@@ -84,6 +84,20 @@ export default function Home() {
     }
   };
 
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      const offset = 100; // Adjust this value as needed
+      const topPosition =
+        projectsSection.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: topPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="mainBody">
       <div className="mWidth homeMainDiv" data-aos="fade-up">
@@ -96,13 +110,14 @@ export default function Home() {
             initial: "3",
             md: "4",
           }}
+          onClick={scrollToProjects}
         >
           My work
         </Button>
       </div>
 
       <img src="/pc.png" alt="" id="pcImg" data-aos="fade-up" />
-      <div className="mWidth homeDiv" data-aos="fade-up">
+      <div id="projects" className="mWidth homeDiv" data-aos="fade-up">
         <h1 className="pageTitle">Projects</h1>
 
         {/* Carousel Container */}
