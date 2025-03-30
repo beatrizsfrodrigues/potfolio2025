@@ -189,8 +189,15 @@
   max-width: fit-content;
 }
 
+.infoDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
 .projectPoster {
-  width: 60%;
+  width: 310px;
   height: 440px;
   object-fit: cover;
   border-radius: 8px;
@@ -200,7 +207,7 @@
 
 .projectVideo {
   width: 100%;
-  height: 300px;
+  height: 230px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -225,13 +232,9 @@
 }
 
 .slideBtn {
-  background: none;
   color: var(--mauve-1);
-  border: none;
-  padding: 0px;
   cursor: pointer;
-  font-size: 20px;
-  position: absolute;
+  margin: 0px -20px;
 }
 
 .svgBtn {
@@ -312,27 +315,42 @@
 
 .modal-content {
   background: var(--mauve-3);
-  padding: 20px;
+  padding: 32px;
   width: 80%;
   max-width: 600px;
   border-radius: 10px;
   position: relative;
-  height: 90vh;
+  height: 80vh;
   overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modal-content .imageSlider {
+  margin-top: 40px;
 }
 
 .close-btn {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 0px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 32px;
   cursor: pointer;
 }
 
 #projectsContainer {
   height: 84vh;
+}
+
+#modalHeader {
+  padding: 32px 0px;
+  width: 109%;
+  margin: -32px;
+  position: sticky;
+  background-color: var(--mauve-3);
+  z-index: 200;
+  top: -32px;
 }
 
 @media screen and (max-width: 1280px) {
