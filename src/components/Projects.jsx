@@ -168,9 +168,14 @@ export default function Projects() {
       {isModalOpen && isSmallScreen && selectedProject && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-btn" onClick={() => setIsModalOpen(false)}>
-              ×
-            </button>
+            <header id="modalHeader">
+              <button
+                className="close-btn"
+                onClick={() => setIsModalOpen(false)}
+              >
+                ×
+              </button>
+            </header>
             <ProjectInfo
               project={selectedProject}
               getSkill={getSkill}
