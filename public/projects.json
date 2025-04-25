@@ -3,22 +3,21 @@
     "id": 0,
     "name": "YU",
     "logo": "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1741814933/YU_1_hjueqg.svg",
-    "skills": [0, 1, 2, 6, 10, 12, 13, 16],
+    "skills": [0, 1, 2, 6, 10, 12, 17, 13, 16],
     "photos": [
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375973/portfolio/evergreen1_u2j9eo.png",
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375974/portfolio/evergreen2_v5rkyl.png",
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375980/portfolio/evergreen3_ssldrj.png"
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591725/eb4a6711-0545-4336-b5d6-50305368e8a7.png",
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591776/35cd1666-daec-46f5-aa0b-a0ea66ada4cc.png",
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591823/7369134c-64d3-4319-a92e-af06e8ceb134.png"
     ],
-    "video_tour": "https://res.cloudinary.com/dsdq3yrz5/video/upload/v1725374101/portfolio/evergreen_tour_pkd6jk.mp4",
-    "poster": "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725377254/portfolio/poster_evergreen_mfl7ov.png",
-    "shortDescription": "An app to help teens and pre-teens to spend less time on their phone.",
-    "description": "Evergreen is a digital platform designed to enhance the Eco-Escolas educational experience for students of all ages. Developed over a school year, it helps students organize activities and stay engaged through an intuitive, gamified interface. Explore the <a href='https://www.figma.com/design/Ywjn7cvznFeKiS011dGjtV/Evergreen?node-id=0-1&t=3XAWIJTAw92q8lSF-1' target='_blank'>Figma design</a> or check out the GitHub repository for the <a href='https://github.com/motamdaniela/Evergreen' target='_blank'>Front-end</a> and <a href='https://github.com/motamdaniela/Evergreen-backend' target='_blank'>Back-end</a>."
+    "video_promotional": "https://res.cloudinary.com/dhp2bgd7u/video/upload/v1745590528/WhatsApp_Video_2025-01-16_at_20.08.46_ianhr5.mp4",
+    "shortDescription": "A creative app encouraging young users to spend less time online and more time engaging in real life.",
+    "description": "YU is a wellness-focused mobile app that gamifies screen-time reduction through mutual support. Our team began with user research to understand teen phone habits, then crafted a prototype in Figma backed by a playful and supportive UX. I contributed to both the UI/UX design and the front-end using React, along with API development and integration using Node.js. The whole experience was enriched with smooth CSS animations and responsive design. You can view the <a href='https://www.figma.com/design/35ODXAFnsRjnr1BP12epQc/Protótipo?node-id=50-2&t=gUOwn2J0PiLcxr4A-1'>Figma design</a> or check out the GitHub repository for the <a href='https://github.com/beatrizsfrodrigues/yu_cbl' target='_blank'>Front-end</a> and <a href='https://github.com/beatrizsfrodrigues/yu_cbl_backend' target='_blank'>Back-end</a>."
   },
   {
     "id": 1,
     "name": "Evergreen",
     "logo": "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1741814932/Vector_a4imbe.svg",
-    "skills": [0, 1, 2, 5, 6, 4, 12, 14, 13],
+    "skills": [0, 1, 2, 5, 6, 4, 12, 14, 17, 13],
     "photos": [
       "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375973/portfolio/evergreen1_u2j9eo.png",
       "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375974/portfolio/evergreen2_v5rkyl.png",
@@ -64,14 +63,12 @@
     "logo": "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1741814930/logo_llfdmz.svg",
     "skills": [0, 1, 2, 4, 5],
     "photos": [
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375973/portfolio/evergreen1_u2j9eo.png",
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375974/portfolio/evergreen2_v5rkyl.png",
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375980/portfolio/evergreen3_ssldrj.png"
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591590/012d0ea2-a2a9-4ebf-a988-ff800f2c1ccb.png",
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591543/07df4bc7-95a5-4c2e-975d-08ff21a4339e.png",
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591619/26501a37-82bd-4626-845e-9529966e2d41.png"
     ],
-    "video_tour": "https://res.cloudinary.com/dsdq3yrz5/video/upload/v1725374101/portfolio/evergreen_tour_pkd6jk.mp4",
-    "poster": "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725377254/portfolio/poster_evergreen_mfl7ov.png",
     "shortDescription": "A personal website to promote services and book appointments.",
-    "description": "Evergreen is a digital platform designed to enhance the Eco-Escolas educational experience for students of all ages. Developed over a school year, it helps students organize activities and stay engaged through an intuitive, gamified interface. Explore the <a href='https://www.figma.com/design/Ywjn7cvznFeKiS011dGjtV/Evergreen?node-id=0-1&t=3XAWIJTAw92q8lSF-1' target='_blank'>Figma design</a> or check out the GitHub repository for the <a href='https://github.com/motamdaniela/Evergreen' target='_blank'>Front-end</a> and <a href='https://github.com/motamdaniela/Evergreen-backend' target='_blank'>Back-end</a>."
+    "description": "I designed and developed this site solo to showcase the brand of a local makeup artist. Starting with a style guide and logo design in Illustrator, I translated the visual identity into a responsive Vue site with CSS styling and form handling. Explore the <a href='https://www.figma.com/design/6Wjp3jxaMgLFnyUMk77Rle/mf_website?node-id=638-344&t=47AQHvVWPcus1IAd-1' target='_blank'>Figma design</a> or check out the GitHub repository for the <a href='https://github.com/beatrizsfrodrigues/MFMakeupArtist' target='_blank'>Front-end</a>."
   },
   {
     "id": 5,
@@ -107,14 +104,12 @@
     "logo": "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1741814929/image_17_yidase.svg",
     "skills": [2, 13, 14],
     "photos": [
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375973/portfolio/evergreen1_u2j9eo.png",
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375974/portfolio/evergreen2_v5rkyl.png",
-      "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725375980/portfolio/evergreen3_ssldrj.png"
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591213/aa6a9421-13cf-4e48-90f8-f94abe909b23.png",
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591254/081ad273-3172-4187-be60-692c11f43b61.png",
+      "https://res.cloudinary.com/dhp2bgd7u/image/upload/v1745591330/0913d8fd-f422-4efc-a872-4925df983857.png"
     ],
-    "video_tour": "https://res.cloudinary.com/dsdq3yrz5/video/upload/v1725374101/portfolio/evergreen_tour_pkd6jk.mp4",
-    "poster": "https://res.cloudinary.com/dsdq3yrz5/image/upload/v1725377254/portfolio/poster_evergreen_mfl7ov.png",
     "shortDescription": "A redesign of Sumol's landing page and email marketing strategy.",
-    "description": "Evergreen is a digital platform designed to enhance the Eco-Escolas educational experience for students of all ages. Developed over a school year, it helps students organize activities and stay engaged through an intuitive, gamified interface. Explore the <a href='https://www.figma.com/design/Ywjn7cvznFeKiS011dGjtV/Evergreen?node-id=0-1&t=3XAWIJTAw92q8lSF-1' target='_blank'>Figma design</a> or check out the GitHub repository for the <a href='https://github.com/motamdaniela/Evergreen' target='_blank'>Front-end</a> and <a href='https://github.com/motamdaniela/Evergreen-backend' target='_blank'>Back-end</a>."
+    "description": "This was a marketing-focused project. We analyzed Sumol’s brand and created a more dynamic landing page using bold visual elements and bright colors in Figma. We also designed a set of email templates. Explore the <a href='https://www.figma.com/design/9OsHkJHHCKdzgarTjUlNcx/Sumol?node-id=0-1&t=URorTr71YDjCwzEl-1' target='_blank'>Figma design</a>."
   },
 
   {
