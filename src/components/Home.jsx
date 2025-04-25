@@ -22,7 +22,7 @@ export default function Home() {
   const [slidesPerView, setSlidesPerView] = useState(3);
   const [num, setNum] = useState(0);
 
-  const projectIdsToShow = [1, 2, 3, 4];
+  const projectIdsToShow = [0, 1, 2, 3];
 
   const navigate = useNavigate();
 
