@@ -100,5 +100,11 @@
     "name": "UA",
     "icon": "",
     "description": "School project done at University of Aveiro."
+  },
+  {
+    "id": 17,
+    "name": "MongoDB",
+    "icon": "",
+    "description": "My favorite NoSQL database! I use MongoDB to store and manage data for my applications, ensuring flexibility and scalability."
   }
 ]

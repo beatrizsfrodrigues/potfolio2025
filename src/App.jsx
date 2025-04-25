@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,6 +9,7 @@ import {
 import "./App.css";
 import "@radix-ui/themes/styles.css";
 import { Theme, Button } from "@radix-ui/themes";
+import * as Icons from "@radix-ui/react-icons";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 
@@ -25,25 +26,112 @@ const ScrollToTop = () => {
 function App() {
   const location = useLocation();
   const state = location.state || {};
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
-      <nav>
+      {/* <nav>
         <Link to="/" className="navTitle">
           Beatriz
         </Link>
-        <div>
+
+        <button className="menuBtn" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <Icons.Cross2Icon size={24} />
+          ) : (
+            <Icons.HamburgerMenuIcon size={24} />
+          )}
+        </button>
+
+        <div className={`navLinks ${isOpen ? "open" : ""}`}>
           <Link to="/projects" className="navLink">
             Projects
           </Link>
           <a href="/cv.pdf" download="Beatriz_Rodrigues_CV">
-            <Button radius="full" variant="solid" size="4" id="cvBtn">
+            <Button
+              radius="full"
+              variant="solid"
+              size={{
+                initial: "3",
+                md: "4",
+              }}
+              id="cvBtn"
+            >
+              Get my CV!
+            </Button>
+          </a>
+        </div>
+      </nav> */}
+
+      <nav className="navbar">
+        <Link to="/" className="navTitle" onClick={() => setIsOpen(false)}>
+          Beatriz
+        </Link>
+
+        {/* Menu button */}
+        <button
+          className="menuBtn"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+        >
+          {isOpen ? (
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.8536 2.85355C13.0488 2.65829 13.0488 2.34171 12.8536 2.14645C12.6583 1.95118 12.3417 1.95118 12.1464 2.14645L7.5 6.79289L2.85355 2.14645C2.65829 1.95118 2.34171 1.95118 2.14645 2.14645C1.95118 2.34171 1.95118 2.65829 2.14645 2.85355L6.79289 7.5L2.14645 12.1464C1.95118 12.3417 1.95118 12.6583 2.14645 12.8536C2.34171 13.0488 2.65829 13.0488 2.85355 12.8536L7.5 8.20711L12.1464 12.8536C12.3417 13.0488 12.6583 13.0488 12.8536 12.8536C13.0488 12.6583 13.0488 12.3417 12.8536 12.1464L8.20711 7.5L12.8536 2.85355Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          ) : (
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.5 3C1.22386 3 1 3.22386 1 3.5C1 3.77614 1.22386 4 1.5 4H13.5C13.7761 4 14 3.77614 14 3.5C14 3.22386 13.7761 3 13.5 3H1.5ZM1 7.5C1 7.22386 1.22386 7 1.5 7H13.5C13.7761 7 14 7.22386 14 7.5C14 7.77614 13.7761 8 13.5 8H1.5C1.22386 8 1 7.77614 1 7.5ZM1 11.5C1 11.2239 1.22386 11 1.5 11H13.5C13.7761 11 14 11.2239 14 11.5C14 11.7761 13.7761 12 13.5 12H1.5C1.22386 12 1 11.7761 1 11.5Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          )}
+        </button>
+
+        {/* Navigation links */}
+        <div className={`navLinks ${isOpen ? "open" : ""}`}>
+          <Link
+            to="/projects"
+            className="navLink"
+            onClick={() => setIsOpen(false)}
+          >
+            Projects
+          </Link>
+          <a href="/cv.pdf" download="Beatriz_Rodrigues_CV">
+            <Button
+              radius="full"
+              variant="solid"
+              size={{
+                initial: "3",
+                md: "4",
+              }}
+              id="cvBtn"
+              onClick={() => setIsOpen(false)}
+            >
               Get my CV!
             </Button>
           </a>
         </div>
       </nav>
-
       <ScrollToTop />
 
       <Routes location={state.backgroundLocation || location}>
